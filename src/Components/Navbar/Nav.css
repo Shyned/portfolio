@@ -1,0 +1,7 @@
+.nav-content {
+  display: flex;
+}
+
+nav {
+  padding-right: 10px;
+}

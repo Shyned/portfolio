@@ -5,3 +5,8 @@
 #dark {
   background-color: #181818;
 }
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}

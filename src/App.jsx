@@ -7,6 +7,8 @@ import "./App.css";
 import { createContext, useState } from "react";
 import ReactSwitch from "react-switch";
 import { GiSunbeams, GiEvilMoon } from "react-icons/gi";
+import ReactHowler from "react-howler";
+
 export const ThemeContext = createContext("null");
 
 function App() {
@@ -17,11 +19,19 @@ function App() {
   };
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <section>
-        <div>
-          <label>{theme === "light" ? <GiSunbeams /> : <GiEvilMoon />}</label>
-          <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
-          <Navbar />
+      <section id={theme}>
+        <div className="head">
+          <div>
+            <label className="toggle-mode">
+              {theme === "light" ? (
+                <GiSunbeams color="#FAC668" size="2em" />
+              ) : (
+                <GiEvilMoon size="2em" color="#191970" />
+              )}
+            </label>
+            <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
+          </div>
+          <Navbar className="nav" />
         </div>
         <div className="App" id={theme}>
           <About />
